@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iosveka Word Spacing Demo</title>
+    <style>
+      @font-face {
+        font-family: "Iosveka";
+        src: url("./iosevka-regular.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: "Iosveka", monospace;
+        line-height: 1.6;
+        font-size: 18px;
+      }
+
+      .container {
+        display: flex;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .text-version {
+        flex: 1;
+      }
+
+      .original {
+        word-spacing: normal;
+      }
+
+      .modified {
+        word-spacing: -0.2ch;
+      }
+
+      .toggle-container {
+        display: none;
+        margin: 20px auto;
+        text-align: center;
+        width: 100%;
+      }
+
+      .toggle-button-group {
+        display: inline-flex;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .toggle-button {
+        padding: 10px 20px;
+        background: #f0f0f0;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        flex: 1;
+        text-align: center;
+      }
+
+      .toggle-button:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+
+      .toggle-button:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+
+      .toggle-button.active {
+        background: #007bff;
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .text-version {
+          display: none;
+        }
+
+        .text-version.active {
+          display: block;
+        }
+
+        .toggle-container {
+          display: block;
+        }
+      }
+
+      .label {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toggle-container">
+      <div class="toggle-button-group">
+        <button class="toggle-button active" data-target="original">
+          Original spacing
+        </button>
+        <button class="toggle-button" data-target="modified">
+          Reduced spacing
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="text-version original active">
+        <h2 class="label">Original Word Spacing</h2>
+        <div class="comparison-text">
+          <p>
+            Proper word spacing is crucial for readability. It creates a
+            comfortable rhythm for the eye to follow, making text easier to scan
+            and understand. When word spacing is too tight or too wide, it can
+            disrupt the flow of reading and cause eye strain.
+          </p>
+
+          <p>
+            Reduced whitespace width is a great fit for Iosveka Aile, since it
+            is already a quasi-proportional font with monospace aesthetics while
+            improving on readability with quasi-proportional spacing. This
+            hybrid approach preserves the technical/terminal visual style
+            designers want, but with word spacing that respects linguistic
+            patterns. The result is text that retains its mechanical charm while
+            gaining the reading comfort of traditional proportional fonts -
+            particularly crucial in long-form content where strict monospacing
+            causes rapid reader fatigue.
+          </p>
+        </div>
+      </div>
+      <div class="text-version modified">
+        <h2 class="label">Reduced Word Spacing</h2>
+        <div class="comparison-text">
+          <p>
+            Proper word spacing is crucial for readability. It creates a
+            comfortable rhythm for the eye to follow, making text easier to scan
+            and understand. When word spacing is too tight or too wide, it can
+            disrupt the flow of reading and cause eye strain.
+          </p>
+
+          <p>
+            Reduced whitespace width is a great fit for Iosveka Aile, since it
+            is already a quasi-proportional font with monospace aesthetics while
+            improving on readability with quasi-proportional spacing. This
+            hybrid approach preserves the technical/terminal visual style
+            designers want, but with word spacing that respects linguistic
+            patterns. The result is text that retains its mechanical charm while
+            gaining the reading comfort of traditional proportional fonts -
+            particularly crucial in long-form content where strict monospacing
+            causes rapid reader fatigue.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const toggleButtons = document.querySelectorAll(".toggle-button");
+      const textVersions = document.querySelectorAll(".text-version");
+
+      function activate(target) {
+        toggleButtons.forEach((btn) => btn.classList.remove("active"));
+        textVersions.forEach((version) => version.classList.remove("active"));
+        document
+          .querySelector(`.toggle-button[data-target="${target}"]`)
+          .classList.add("active");
+        document
+          .querySelector(`.text-version.${target}`)
+          .classList.add("active");
+      }
+
+      toggleButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          activate(this.getAttribute("data-target"));
+        });
+      });
+    </script>
+  </body>
+</html>
