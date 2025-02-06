@@ -6,8 +6,16 @@
     <title>Iosveka Word Spacing Demo</title>
     <style>
       @font-face {
-        font-family: "Iosveka";
-        src: url("./IosevkaCharon-Regular.woff") format("woff2");
+        font-family: "Iosveka 5/9";
+        src: url("./IosevkaCharon-Regular59.ttf") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Iosveka 7/12";
+        src: url("./IosevkaCharon-Regular712.ttf") format("woff2");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -45,7 +53,11 @@
       }
 
       .modified {
-        font-family: "Iosveka";
+        font-family: "Iosveka 5/9";
+      }
+
+      .tight {
+        font-family: "Iosveka 7/12";
       }
 
       .toggle-container {
@@ -118,8 +130,11 @@
         <button class="toggle-button active" data-target="original">
           Original spacing
         </button>
-        <button class="toggle-button" data-target="modified">
+        <button class="toggle-button" data-target="tight">
           Reduced spacing
+        </button>
+        <button class="toggle-button" data-target="modified">
+          Tight spacing
         </button>
       </div>
     </div>
@@ -146,8 +161,30 @@
           </p>
         </div>
       </div>
+      <div class="text-version tight">
+        <h2 class="label">5/9 Word Spacing</h2>
+        <div class="comparison-text">
+          <p>
+            Proper word spacing is crucial for readability. It creates a
+            comfortable rhythm for the eye to follow, making text easier to scan
+            and understand. When word spacing is too tight or too wide, it can
+            disrupt the flow of reading and cause eye strain.
+          </p>
+
+          <p>
+            When the space between words is too tight, they start to blend
+            together, making it tricky to read smoothly. But if the spacing is
+            too wide—which actually happens more often—it creates big gaps that
+            make reading feel choppy, like you’re hopping from one word to the
+            next instead of gliding through sentences. This can slow things
+            down, make it harder to understand what you're reading, and even
+            make it easier to lose focus. Good spacing keeps everything flowing
+            naturally!
+          </p>
+        </div>
+      </div>
       <div class="text-version modified">
-        <h2 class="label">Adjusted Word Spacing</h2>
+        <h2 class="label">7/12 Word Spacing</h2>
         <div class="comparison-text">
           <p>
             Proper word spacing is crucial for readability. It creates a
