@@ -7,7 +7,15 @@
     <style>
       @font-face {
         font-family: "Iosveka";
-        src: url("./iosevka-regular.woff2") format("woff2");
+        src: url("./IosevkaCharon-Regular.woff") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Iosveka Upstream";
+        src: url("./IosevkaCharonUpstream-Regular.woff") format("woff2");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -16,7 +24,7 @@
       body {
         margin: 0;
         padding: 20px;
-        font-family: "Iosveka", monospace;
+        font-family: "Iosveka Upstream", monospace;
         line-height: 1.6;
         font-size: 18px;
       }
@@ -37,7 +45,7 @@
       }
 
       .modified {
-        word-spacing: -0.2ch;
+        font-family: "Iosveka";
       }
 
       .toggle-container {
@@ -117,7 +125,7 @@
     </div>
     <div class="container">
       <div class="text-version original active">
-        <h2 class="label">Original Word Spacing</h2>
+        <h2 class="label">Current Word Spacing</h2>
         <div class="comparison-text">
           <p>
             Proper word spacing is crucial for readability. It creates a
@@ -127,20 +135,19 @@
           </p>
 
           <p>
-            Reduced whitespace width is a great fit for Iosveka Aile, since it
-            is already a quasi-proportional font with monospace aesthetics while
-            improving on readability with quasi-proportional spacing. This
-            hybrid approach preserves the technical/terminal visual style
-            designers want, but with word spacing that respects linguistic
-            patterns. The result is text that retains its mechanical charm while
-            gaining the reading comfort of traditional proportional fonts -
-            particularly crucial in long-form content where strict monospacing
-            causes rapid reader fatigue.
+            When the space between words is too tight, they start to blend
+            together, making it tricky to read smoothly. But if the spacing is
+            too wide—which actually happens more often—it creates big gaps that
+            make reading feel choppy, like you’re hopping from one word to the
+            next instead of gliding through sentences. This can slow things
+            down, make it harder to understand what you're reading, and even
+            make it easier to lose focus. Good spacing keeps everything flowing
+            naturally!
           </p>
         </div>
       </div>
       <div class="text-version modified">
-        <h2 class="label">Reduced Word Spacing</h2>
+        <h2 class="label">Adjusted Word Spacing</h2>
         <div class="comparison-text">
           <p>
             Proper word spacing is crucial for readability. It creates a
@@ -150,15 +157,14 @@
           </p>
 
           <p>
-            Reduced whitespace width is a great fit for Iosveka Aile, since it
-            is already a quasi-proportional font with monospace aesthetics while
-            improving on readability with quasi-proportional spacing. This
-            hybrid approach preserves the technical/terminal visual style
-            designers want, but with word spacing that respects linguistic
-            patterns. The result is text that retains its mechanical charm while
-            gaining the reading comfort of traditional proportional fonts -
-            particularly crucial in long-form content where strict monospacing
-            causes rapid reader fatigue.
+            When the space between words is too tight, they start to blend
+            together, making it tricky to read smoothly. But if the spacing is
+            too wide—which actually happens more often—it creates big gaps that
+            make reading feel choppy, like you’re hopping from one word to the
+            next instead of gliding through sentences. This can slow things
+            down, make it harder to understand what you're reading, and even
+            make it easier to lose focus. Good spacing keeps everything flowing
+            naturally!
           </p>
         </div>
       </div>
